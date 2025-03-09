@@ -1,0 +1,242 @@
+[
+    {
+      "row": 1,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(106, 50, 236)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Math</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">De Mierry</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 309</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(144, 224, 46)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Science</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Calmettes, Mathieu</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 312</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(255, 205, 117)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">English</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">To</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 103</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(255, 205, 117)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">English</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">To</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 103</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(255, 205, 117)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">English</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">To</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 102</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(106, 50, 236)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Math</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">De Mierry</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 309</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(161, 23, 171)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Spanish</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Huarte</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 103</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(144, 224, 46)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Science</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Teacher's Name</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 312</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(107, 188, 73)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">HVC</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Yavo</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: Portable</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "2",
+      "backgroundColor": "rgb(146, 249, 108)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">French</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Bonnemaison</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 102</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(146, 249, 108)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">French</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Bonnemaison</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 307 Primary</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(255, 205, 117)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">English</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">To</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 105</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(146, 249, 108)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">French</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Bonnemaison</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 111</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(228, 216, 227)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Performing Arts</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Jesson</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 111</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "colspan": "undefined",
+      "rowspan": "2",
+      "backgroundColor": "rgb(245, 158, 238)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">EPS</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Yavo</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: Fairbanks</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(146, 249, 108)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">French</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Bonnemaison</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 102</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "colspan": "undefined",
+      "rowspan": "2",
+      "backgroundColor": "rgb(245, 158, 238)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">EPS</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Yavo</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 100</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 6,
+      "col": 0,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(47, 127, 177)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">HGEMC</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Durand</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 110</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 6,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(161, 23, 171)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Spanish</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Huarte</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 105</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(144, 224, 46)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Science</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Calmettes, Mathieu</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 312</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 7,
+      "col": 0,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(47, 127, 177)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">HGEMC</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Durand</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 313</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 7,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(86, 189, 126)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Methodology</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">ED+ Secondary</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 102</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(47, 127, 177)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">HGEMC</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Durand</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 105</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 7,
+      "col": 3,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(252, 134, 254)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Plastic Arts</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Choisy</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 111</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 7,
+      "col": 4,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(254, 113, 243)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">AP French</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Nouzarede</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: BCDI 1</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 8,
+      "col": 0,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(106, 50, 236)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Math</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">De Mierry</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 309</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 8,
+      "col": 1,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(231, 46, 255)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">French Boost</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Bonnemaison</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 102</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 8,
+      "col": 2,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(255, 205, 117)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">English</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">To</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 105</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 8,
+      "col": 3,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(231, 46, 255)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">French Boost</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Bonnemaison</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 102</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    },
+    {
+      "row": 8,
+      "col": 4,
+      "colspan": "undefined",
+      "rowspan": "undefined",
+      "backgroundColor": "rgb(106, 50, 236)",
+      "innerHTML": "<h3 contenteditable=\"true\" style=\"margin: 0; font-size: 14px;\">Math</h3>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">De Mierry</p>\n                        <p contenteditable=\"true\" style=\"margin: 0; font-size: 12px;\">Room: 309</p>\n                    <div class=\"resize-handle\" style=\"position: absolute; width: 15px; height: 15px; background-color: rgb(61, 116, 255); border-radius: 50%; border: 2px solid white; bottom: -10px; right: -10px; cursor: nwse-resize; z-index: 1000;\"><img src=\"arrow-bottom-right.png\" style=\"width: 100%; height: 100%; object-fit: contain; pointer-events: none;\"></div>"
+    }
+  ]
