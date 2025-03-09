@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Schedule</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="files/style.css">
+</head>
+<body>
+    <script src="files/translations.js"></script>
+    <div id="language-selector">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+    </div>
+    <div id="scan-line"></div>    
+    
+    <h1 style="position: relative;">Create, edit and swap your schedule!</h1>
+    <p style="position: fixed; right: 0; top: 0; margin: 10px;" class="effect-shine"><i>Made by Julian .B</i></p>
+    <p>Get tired of your boring schedule? Too many classes? Too little classes? Not enough lunch? No free time? 2 hour classes? 3 classes in a row in the same damn room?</p>
+    <p>Well, you're in luck! With Ideal Schedule, you can create, edit and swap your schedule to your liking! You can even share your schedule with your friends!</p>
+
+    <div style="
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-start; 
+        background-color: #f9f9f9; 
+        border-radius: 12px; 
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+        padding: 16px; 
+        max-width: 420px;
+        position: relative;
+        ">
+        <div style="display: flex; align-items: center;">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40" height="40" alt="GitHub">
+            <h2 style="margin-left: 12px; font-size: 16px; font-weight: 500; margin: 0;">
+                <a href="https://github.com/TCMFatbird" target="_blank" rel="noopener" 
+                    style="text-decoration: none; color: #0366d6; font-family: 'Inter', sans-serif; position: relative;"
+                    onmouseover="showText()" onmouseout="hideText()">
+                        github.com/TCMFatbird
+                </a>
+            </h2>
+            <div class='at-container'>
+                <div class='at-item'></div>
+            </div>
+        </div>
+    
+        <!-- Hidden Text Appears on Hover -->
+        <div id="hoverText" style="
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 0px;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 0px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 70%;
+            display: none;
+        ">
+            Loading...
+        </div>
+    </div>
+    <script src="files/readme.js"></script>
+
+    <br>
+    <div class="button-container">
+        <button id="saveButton">Save Table</button>
+        <button id="loadButton">Load Table</button>
+        <button id="clearButton">Clear Table</button>
+        <button id="exportButton">Export as PNG</button>
+        <button id="exampleButton">Example 1</button>
+        <button id="feedbackButton">Send Feedback</button>
+
+        <div id="feedbackForm" style="display: none; position: fixed; top: 50%; left: 0; transform: translateY(-50%); background-color: white; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h2>Feedback</h2>
+            <textarea id="feedbackText" rows="4" cols="20" placeholder="Enter your feedback here..."></textarea>
+            <br>
+            <button id="submitFeedbackButton">Submit</button>
+            <button id="cancelFeedbackButton">Cancel</button>
+        </div>
+        <input type="file" id="loadInput" accept="application/json" style="display: none;">
+    </div>
+
+    <div class="container">
+        <div class="days">
+            <div id="mon">Monday</div>
+            <div id="tue">Tuesday</div>
+            <div id="wed">Wednesday</div>
+            <div id="thu">Thursday</div>
+            <div id="fri">Friday</div>
+        </div>
+        <div class="schedule">
+            <!-- Time format toggle button with emoji -->
+            <button id="toggleTimeFormat">⏰</button>
+            
+            <div class="time-column">
+                <script src="files/time.js"></script>
+                <div>08h00</div>
+                <div>08h30</div>
+                <div>09h25</div>
+                <div>10h30</div>
+                <div>11h25</div>
+                <div>12h20</div>
+                <div>13h15</div>
+                <div>14h20</div>
+                <div>15h15</div>
+                <div>16h10</div>
+                <div>17h05</div>
+                <div>17h55</div>
+            </div>
+            <table>
+                <tbody>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p>Click on a cell to add a class or edit an existing one. Hold and drag it to move it across the table.</p>
+    <p>Click on the "Save" button to save your schedule as a JSON file. You can also click on the "Load" button to load a previously saved schedule.</p>
+    <p>Click on the "Clear" button to clear your schedule.</p>
+    <p>Click on the "Export as PNG" button to export your schedule as a PNG image.</p>
+    
+    <script src="files/anims.js"></script>
+    <script src="files/timetable.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "VkMqYDO897ntrXUJ2",
+            });
+        })();
+    </script>
+    <h6 style="position: fixed; bottom: 0; left: 0; margin: 10px;" id="thanks">thanks to github and codepen! (and you for using my tool) :D</h6>
+</body>
+</html>
