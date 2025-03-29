@@ -8,6 +8,7 @@ body {
     text-align: center;
     background-color: #f4f4f9;
     color: #000000;
+    transition: all 0.3 ease;
 }
 .container {
     display: flex;
