@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadExample() {
     clearTable();
-    fetch('ex1.json')
+    fetch('../ex1.json')
         .then(response => response.json())
         .then(exampleData => {
             exampleData.forEach(data => {
