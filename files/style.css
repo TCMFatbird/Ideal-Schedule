@@ -45,11 +45,9 @@ body {
     color: #555;
 }   
 .time-column div {
-    display: table-row;
+    display: flex;
     align-items: center;
-    text-align: center;
     height: 48px;
-    line-heiht: 42px;
 }
 table {
     border-collapse: collapse;
