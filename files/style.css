@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -8,7 +7,6 @@ body {
     text-align: center;
     background-color: #f4f4f9;
     color: #000000;
-    transition: all 0.3s ease;
 }
 .container {
     display: flex;
@@ -36,18 +34,24 @@ body {
     position: relative;
 }
 .time-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative; /* allow absolute-positioned time slots */
+    width: 60px;
     height: 576px; /* Match the height of the table */
     padding-right: 10px;
     font-weight: bold;
     color: #555;
-}   
-.time-column div {
-    display: flex;
-    align-items: center;
-    height: 48px;
+    z-index: 1200; /* ensure time column sits above separators */
+}
+.time-column .time-slot {
+    position: absolute;
+    left: 0;
+    transform: translateY(-1px); /* align to top corner */
+    padding-left: 4px;
+    height: 1px; /* visual doesn't need height, text will show */
+    line-height: 1;
+    white-space: nowrap;
+    cursor: text;
+    z-index: 1250; /* ensure individual time labels render above separators */
 }
 table {
     border-collapse: collapse;
@@ -67,12 +71,29 @@ td {
 td:hover {
     background: #f0f0f0;
 }
-tr:nth-child(3), tr:nth-child(7) {
-    border-bottom: 2px solid yellow;
+/* separators will be drawn as draggable overlay lines */
+.separator {
+    position: absolute;
+    /* start separators after the time column so they don't cover time labels */
+    left: 80px;
+    right: 0;
+    height: 4px;
+    z-index: 700;
+    cursor: ns-resize;
 }
-tr:nth-child(4), tr:nth-child(6) {
-    border-bottom: 3px solid rgb(0, 197, 0);
+.separator .handle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    width: 40px;
+    height: 20px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
+.separator.yellow { background: yellow; }
+.separator.green { background: rgb(0,197,0); }
 .button-container {
     position: fixed;
     right: 20px;
