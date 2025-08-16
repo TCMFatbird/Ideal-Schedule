@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const table = document.querySelector("table");
-    const cells = document.querySelectorAll("table td");
+    let cells = () => document.querySelectorAll("table td");
 
     function darkenColor(color, percent) {
         let num = parseInt(color.slice(1), 16);
@@ -125,8 +125,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     }, { cell: null, dist: Infinity }).cell;
     
                     if (closestCell && closestCell.dataset.filled !== "true") {
+                        // copy contents and styles, including left border if present
                         closestCell.innerHTML = cell.innerHTML;
                         closestCell.style.backgroundColor = cell.style.backgroundColor;
+                        // preserve left border (visual indicator)
+                        if (cell.style.borderLeft && cell.style.borderLeft !== 'none') {
+                            closestCell.style.borderLeft = cell.style.borderLeft;
+                        } else {
+                            // compute a left border based on the color
+                            closestCell.style.borderLeft = `4px solid ${darkenColor(cell.style.backgroundColor || '#000000', -20)}`;
+                        }
                         closestCell.dataset.filled = "true";
                         closestCell.setAttribute("colspan", cell.getAttribute("colspan"));
                         closestCell.setAttribute("rowspan", cell.getAttribute("rowspan"));
@@ -143,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function saveTable() {
         const tableData = [];
-        cells.forEach(cell => {
+        cells().forEach(cell => {
             if (cell.dataset.filled === "true") {
                 const cellData = {
                     row: cell.parentElement.rowIndex,
@@ -197,9 +205,203 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function clearTable() {
-        cells.forEach(cell => {
+        cells().forEach(cell => {
             resetCell(cell);
         });
+    }
+
+    // Setup a single cell with default styles and event listeners
+    function setupCell(cell) {
+        if (!cell) return;
+        if (cell.textContent.trim() === "") {
+            cell.style.backgroundColor = "rgb(94, 94, 94)";
+        }
+        cell.style.position = "relative";
+        cell.removeAttribute('data-listener-initialized');
+
+        // Remove previously attached listeners by cloning
+        const newCell = cell.cloneNode(true);
+        cell.parentElement.replaceChild(newCell, cell);
+        const c = newCell;
+        c.dataset.filled = c.dataset.filled || "false";
+
+        c.addEventListener("click", function () {
+            if (c.dataset.filled !== "true") {
+                const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+                const randomRoom = Math.floor(Math.random() * 9999) + 1;
+                c.style.backgroundColor = randomColor;
+                c.style.borderLeft = `4px solid ${darkenColor(randomColor, -20)}`;
+                c.innerHTML = `
+                    <h3 contenteditable="true" style="margin: 0; font-size: 14px;">Class Name</h3>
+                    <p contenteditable="true" style="margin: 0; font-size: 12px;">Teacher's Name</p>
+                    <p contenteditable="true" style="margin: 0; font-size: 12px;">Room: ${randomRoom}</p>
+                `;
+                c.dataset.filled = "true";
+                c.setAttribute("colspan", "1");
+                c.setAttribute("rowspan", "1");
+                createResizeHandles(c);
+                enableDragging(c);
+            }
+        });
+
+        c.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            if (c.dataset.filled === "true") {
+                document.querySelectorAll(".edit-box").forEach(box => box.remove());
+
+                const editBox = document.createElement("div");
+                editBox.className = "edit-box";
+                editBox.style.position = "fixed";
+                editBox.style.width = "140px";
+                editBox.style.padding = "10px";
+                editBox.style.backgroundColor = "white";
+                editBox.style.border = "1px solid black";
+                editBox.style.zIndex = "1000";
+                editBox.style.top = "10px";
+                editBox.style.left = "10px";
+
+                const colorLabel = document.createElement("label");
+                colorLabel.textContent = "Color: ";
+                colorLabel.style.marginRight = "5px";
+
+                const colorInput = document.createElement("input");
+                colorInput.type = "color";
+                colorInput.value = c.style.backgroundColor;
+                colorInput.addEventListener("input", function () {
+                    c.style.backgroundColor = colorInput.value;
+                });
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete Class";
+                deleteButton.addEventListener("click", function () {
+                    resetCell(c);
+                    editBox.remove();
+                });
+
+                const optionLabel = document.createElement("label");
+                optionLabel.textContent = "Week: ";
+                optionLabel.style.marginRight = "5px";
+
+                const optionSelect = document.createElement("select");
+                const options = ["None", "A", "B"];
+                options.forEach(option => {
+                    const optionElement = document.createElement("option");
+                    optionElement.value = option;
+                    optionElement.textContent = option;
+                    optionSelect.appendChild(optionElement);
+                });
+
+                optionSelect.addEventListener("change", function () {
+                    const existingOptionBox = c.querySelector(".option-box");
+                    if (existingOptionBox) {
+                        existingOptionBox.remove();
+                    }
+                    if (optionSelect.value !== "None") {
+                        const optionBox = document.createElement("div");
+                        optionBox.className = "option-box";
+                        optionBox.textContent = optionSelect.value;
+                        optionBox.style.position = "absolute";
+                        optionBox.style.bottom = "-1px";
+                        optionBox.style.right = "-1px";
+                        optionBox.style.border = "1px solid black";
+                        optionBox.style.padding = "2px";
+                        optionBox.style.backgroundColor = "white";
+                        c.appendChild(optionBox);
+                    }
+                });
+
+                const typeLabel = document.createElement("label");
+                typeLabel.textContent = "Type: ";
+                typeLabel.style.marginRight = "5px";
+
+                const typeSelect = document.createElement("select");
+                const types = ["None", "Replacement", "Exception"];
+                types.forEach(type => {
+                    const typeElement = document.createElement("option");
+                    typeElement.value = type;
+                    typeElement.textContent = type;
+                    typeSelect.appendChild(typeElement);
+                });
+
+                typeSelect.addEventListener("change", function () {
+                    const existingTypeBox = c.querySelector(".type-box");
+                    if (existingTypeBox) {
+                        existingTypeBox.remove();
+                    }
+                    if (typeSelect.value !== "None") {
+                        const typeBox = document.createElement("div");
+                        typeBox.className = "type-box";
+                        typeBox.textContent = typeSelect.value;
+                        typeBox.style.color = "#0000ff";
+                        typeBox.style.fontWeight = "bold";
+                        typeBox.style.position = "absolute";
+                        typeBox.style.top = "0";
+                        typeBox.style.left = "0";
+                        typeBox.style.width = "100%";
+                        typeBox.style.backgroundColor = "white";
+                        typeBox.style.textAlign = "center";
+                        typeBox.style.borderBottom = "1px solid black";
+                        typeBox.style.whiteSpace = "nowrap";
+                        typeBox.style.overflow = "hidden";
+                        typeBox.style.textOverflow = "ellipsis";
+                        c.appendChild(typeBox);
+                    }
+                });
+
+                const evalLabel = document.createElement("label");
+                evalLabel.textContent = "Eval: ";
+                evalLabel.style.marginRight = "5px";
+
+                const evalSelect = document.createElement("select");
+                const evalOptions = ["None", "Evaluation", "DS"];
+                evalOptions.forEach(evalOption => {
+                    const evalOptionElement = document.createElement("option");
+                    evalOptionElement.value = evalOption;
+                    evalOptionElement.textContent = evalOption;
+                    evalSelect.appendChild(evalOptionElement);
+                });
+
+                evalSelect.addEventListener("change", function () {
+                    const existingEvalBox = c.querySelector(".eval-box");
+                    if (existingEvalBox) {
+                        existingEvalBox.remove();
+                    }
+                    if (evalSelect.value !== "None") {
+                        const evalBox = document.createElement("div");
+                        evalBox.className = "eval-box";
+                        evalBox.textContent = evalSelect.value === "Evaluation" ? "EVA" : "DS";
+                        evalBox.style.position = "absolute";
+                        evalBox.style.top = "0";
+                        evalBox.style.right = "0";
+                        evalBox.style.border = "2px solid black";
+                        evalBox.style.fontWeight = "bold";
+                        evalBox.style.padding = "2px";
+                        evalBox.style.backgroundColor = "white";
+                        c.appendChild(evalBox);
+                    }
+                });
+
+                editBox.appendChild(colorLabel);
+                editBox.appendChild(colorInput);
+                editBox.appendChild(document.createElement("br"));
+                editBox.appendChild(optionLabel);
+                editBox.appendChild(optionSelect);
+                editBox.appendChild(document.createElement("br"));
+                editBox.appendChild(typeLabel);
+                editBox.appendChild(typeSelect);
+                editBox.appendChild(document.createElement("br"));
+                editBox.appendChild(evalLabel);
+                editBox.appendChild(evalSelect);
+                editBox.appendChild(document.createElement("br"));
+                editBox.appendChild(deleteButton);
+                document.body.appendChild(editBox);
+            }
+        });
+    }
+
+    // Initialize all cells
+    function initializeAllCells() {
+        cells().forEach(cell => setupCell(cell));
     }
 
     function exportToPNG() {
@@ -215,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadExample() {
     clearTable();
-    fetch('../ex1.json')
+    fetch('files/ex1.json')
         .then(response => response.json())
         .then(exampleData => {
             exampleData.forEach(data => {
@@ -228,6 +430,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 createResizeHandles(cell);
                 enableDragging(cell);
             });
+            // ensure times are present and visible
+            if (window.generateTimes) window.generateTimes();
         })
         .catch(error => console.error('Error loading example data:', error));
     }
@@ -285,184 +489,41 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Failed to send feedback. Please try again later.");
         });
     });
+    // initialize all cells on load
+    initializeAllCells();
+    if (window.generateTimes) window.generateTimes();
 
-    cells.forEach(cell => {
-        if (cell.textContent.trim() === "") {
-            cell.style.backgroundColor = "rgb(94, 94, 94)";
-            cell.style.position = "relative";
-
-            cell.addEventListener("click", function () {
-                if (cell.dataset.filled !== "true") {
-                    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-                    const randomRoom = Math.floor(Math.random() * 9999) + 1;
-                    cell.style.backgroundColor = randomColor;
-                    cell.style.borderLeft = `4px solid ${darkenColor(randomColor, -20)}`;
-                    cell.innerHTML = `
-                        <h3 contenteditable="true" style="margin: 0; font-size: 14px;">Class Name</h3>
-                        <p contenteditable="true" style="margin: 0; font-size: 12px;">Teacher's Name</p>
-                        <p contenteditable="true" style="margin: 0; font-size: 12px;">Room: ${randomRoom}</p>
-                    `;
-                    cell.dataset.filled = "true";
-                    cell.setAttribute("colspan", "1");
-                    cell.setAttribute("rowspan", "1");
-                    createResizeHandles(cell);
-                    enableDragging(cell);
-                }
-            });
-
-            cell.addEventListener("contextmenu", function (event) {
-                event.preventDefault();
-                if (cell.dataset.filled === "true") {
-                    document.querySelectorAll(".edit-box").forEach(box => box.remove());
-
-                    const editBox = document.createElement("div");
-                    editBox.className = "edit-box";
-                    editBox.style.position = "fixed";
-                    editBox.style.width = "140px";
-                    editBox.style.padding = "10px";
-                    editBox.style.backgroundColor = "white";
-                    editBox.style.border = "1px solid black";
-                    editBox.style.zIndex = "1000";
-                    editBox.style.top = "10px";
-                    editBox.style.left = "10px";
-
-                    const colorLabel = document.createElement("label");
-                    colorLabel.textContent = "Color: ";
-                    colorLabel.style.marginRight = "5px";
-
-                    const colorInput = document.createElement("input");
-                    colorInput.type = "color";
-                    colorInput.value = cell.style.backgroundColor;
-                    colorInput.addEventListener("input", function () {
-                        cell.style.backgroundColor = colorInput.value;
-                    });
-
-                    const deleteButton = document.createElement("button");
-                    deleteButton.textContent = "Delete Class";
-                    deleteButton.addEventListener("click", function () {
-                        resetCell(cell);
-                        editBox.remove();
-                    });
-
-                    const optionLabel = document.createElement("label");
-                    optionLabel.textContent = "Week: ";
-                    optionLabel.style.marginRight = "5px";
-
-                    const optionSelect = document.createElement("select");
-                    const options = ["None", "A", "B"];
-                    options.forEach(option => {
-                        const optionElement = document.createElement("option");
-                        optionElement.value = option;
-                        optionElement.textContent = option;
-                        optionSelect.appendChild(optionElement);
-                    });
-
-                    optionSelect.addEventListener("change", function () {
-                        const existingOptionBox = cell.querySelector(".option-box");
-                        if (existingOptionBox) {
-                            existingOptionBox.remove();
-                        }
-                        if (optionSelect.value !== "None") {
-                            const optionBox = document.createElement("div");
-                            optionBox.className = "option-box";
-                            optionBox.textContent = optionSelect.value;
-                            optionBox.style.position = "absolute";
-                            optionBox.style.bottom = "-1px";
-                            optionBox.style.right = "-1px";
-                            optionBox.style.border = "1px solid black";
-                            optionBox.style.padding = "2px";
-                            optionBox.style.backgroundColor = "white";
-                            cell.appendChild(optionBox);
-                        }
-                    });
-
-                    const typeLabel = document.createElement("label");
-                    typeLabel.textContent = "Type: ";
-                    typeLabel.style.marginRight = "5px";
-
-                    const typeSelect = document.createElement("select");
-                    const types = ["None", "Replacement", "Exception"];
-                    types.forEach(type => {
-                        const typeElement = document.createElement("option");
-                        typeElement.value = type;
-                        typeElement.textContent = type;
-                        typeSelect.appendChild(typeElement);
-                    });
-
-                    typeSelect.addEventListener("change", function () {
-                        const existingTypeBox = cell.querySelector(".type-box");
-                        if (existingTypeBox) {
-                            existingTypeBox.remove();
-                        }
-                        if (typeSelect.value !== "None") {
-                            const typeBox = document.createElement("div");
-                            typeBox.className = "type-box";
-                            typeBox.textContent = typeSelect.value;
-                            typeBox.style.color = "#0000ff";
-                            typeBox.style.fontWeight = "bold";
-                            typeBox.style.position = "absolute";
-                            typeBox.style.top = "0";
-                            typeBox.style.left = "0";
-                            typeBox.style.width = "100%";
-                            typeBox.style.backgroundColor = "white";
-                            typeBox.style.textAlign = "center";
-                            typeBox.style.borderBottom = "1px solid black";
-                            typeBox.style.whiteSpace = "nowrap";
-                            typeBox.style.overflow = "hidden";
-                            typeBox.style.textOverflow = "ellipsis";
-                            cell.appendChild(typeBox);
-                        }
-                    });
-
-                    const evalLabel = document.createElement("label");
-                    evalLabel.textContent = "Eval: ";
-                    evalLabel.style.marginRight = "5px";
-
-                    const evalSelect = document.createElement("select");
-                    const evalOptions = ["None", "Evaluation", "DS"];
-                    evalOptions.forEach(evalOption => {
-                        const evalOptionElement = document.createElement("option");
-                        evalOptionElement.value = evalOption;
-                        evalOptionElement.textContent = evalOption;
-                        evalSelect.appendChild(evalOptionElement);
-                    });
-
-                    evalSelect.addEventListener("change", function () {
-                        const existingEvalBox = cell.querySelector(".eval-box");
-                        if (existingEvalBox) {
-                            existingEvalBox.remove();
-                        }
-                        if (evalSelect.value !== "None") {
-                            const evalBox = document.createElement("div");
-                            evalBox.className = "eval-box";
-                            evalBox.textContent = evalSelect.value === "Evaluation" ? "EVA" : "DS";
-                            evalBox.style.position = "absolute";
-                            evalBox.style.top = "0";
-                            evalBox.style.right = "0";
-                            evalBox.style.border = "2px solid black";
-                            evalBox.style.fontWeight = "bold";
-                            evalBox.style.padding = "2px";
-                            evalBox.style.backgroundColor = "white";
-                            cell.appendChild(evalBox);
-                        }
-                    });
-
-                    editBox.appendChild(colorLabel);
-                    editBox.appendChild(colorInput);
-                    editBox.appendChild(document.createElement("br"));
-                    editBox.appendChild(optionLabel);
-                    editBox.appendChild(optionSelect);
-                    editBox.appendChild(document.createElement("br"));
-                    editBox.appendChild(typeLabel);
-                    editBox.appendChild(typeSelect);
-                    editBox.appendChild(document.createElement("br"));
-                    editBox.appendChild(evalLabel);
-                    editBox.appendChild(evalSelect);
-                    editBox.appendChild(document.createElement("br"));
-                    editBox.appendChild(deleteButton);
-                    document.body.appendChild(editBox);
-                }
-            });
-        }
+    // reposition time slots and separators on resize
+    window.addEventListener('resize', () => {
+        if (window.generateTimes) window.generateTimes();
     });
+
+    // Add/Delete row utilities
+    function addRow() {
+        const tbody = table.tBodies[0];
+        const newRow = tbody.insertRow();
+        for (let i = 0; i < 5; i++) {
+            const td = newRow.insertCell();
+            td.innerHTML = '';
+            td.style.backgroundColor = 'rgb(94, 94, 94)';
+            td.style.position = 'relative';
+            setupCell(td);
+        }
+        // add corresponding time slot
+        const timeColumn = document.querySelector('.time-column');
+    // regenerate times so they stay consistent (1h apart)
+    if (window.generateTimes) window.generateTimes();
+    }
+
+    function deleteRow() {
+        const tbody = table.tBodies[0];
+        if (tbody.rows.length <= 1) return; // keep at least 1 row
+        tbody.deleteRow(-1);
+    if (window.generateTimes) window.generateTimes();
+    }
+
+    const addRowButton = document.getElementById('addRowButton');
+    const deleteRowButton = document.getElementById('deleteRowButton');
+    addRowButton.addEventListener('click', addRow);
+    deleteRowButton.addEventListener('click', deleteRow);
 });
